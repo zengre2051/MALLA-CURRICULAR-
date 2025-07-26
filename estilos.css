@@ -1,1 +1,99 @@
+/* ---- Paleta de Colores Pastel ---- */
+:root {
+    --color-fondo: #f4f1f7; /* Un lila muy claro */
+    --color-ramo: #ffffff;
+    --color-ramo-aprobado: #e1c0e1; /* Morado pastel */
+    --color-texto: #4a4a4a;
+    --color-texto-aprobado: #fafafa;
+    --color-sombra: rgba(0, 0, 0, 0.08);
+    --color-titulo: #d59fca; /* Rosa pastel */
+    --color-borde: #e0e0e0;
+}
 
+/* ---- Estilos Generales ---- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    color: var(--color-titulo);
+    font-weight: 600;
+    font-size: 2.5em;
+    margin-bottom: 0;
+}
+
+header p {
+    color: var(--color-texto);
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+/* ---- Contenedor Principal de la Malla ---- */
+.malla-curricular {
+    display: flex;
+    flex-direction: row; /* Organiza los semestres en fila */
+    overflow-x: auto; /* Permite scroll horizontal si no caben todos */
+    padding-bottom: 20px; /* Espacio para la barra de scroll */
+    gap: 20px; /* Espacio entre las columnas de semestres */
+}
+
+/* ---- Columna de Semestre ---- */
+.semestre {
+    flex: 0 0 250px; /* No crece, no se encoge, base de 250px de ancho */
+    background-color: var(--color-fondo);
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid var(--color-borde);
+    min-width: 250px; /* Ancho mínimo para cada columna */
+}
+
+.semestre h2 {
+    text-align: center;
+    color: var(--color-titulo);
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-titulo);
+    padding-bottom: 10px;
+}
+
+/* ---- Estilo de cada Ramo/Asignatura ---- */
+.ramo {
+    background-color: var(--color-ramo);
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--color-sombra);
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transición suave para todos los cambios */
+    font-weight: 400;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.ramo:hover {
+    transform: translateY(-3px); /* Efecto de levantar al pasar el mouse */
+    box-shadow: 0 6px 12px var(--color-sombra);
+}
+
+/* ---- Estilo para el Ramo Aprobado ---- */
+.ramo.aprobado {
+    background-color: var(--color-ramo-aprobado);
+    color: var(--color-texto-aprobado);
+    text-decoration: line-through; /* Tacha el texto */
+    text-decoration-thickness: 2px;
+    font-weight: 300;
+    transform: scale(0.98); /* Ligero efecto de encogimiento */
+}
